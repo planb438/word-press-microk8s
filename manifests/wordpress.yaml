@@ -50,9 +50,10 @@ metadata:
 spec:
   ports:
   - port: 80
+    nodePort: 30080  # Add this line for a specific port
   selector:
     app: wordpress
-  type: LoadBalancer
+  type: NodePort  # Changed from LoadBalancer to NodePort
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
