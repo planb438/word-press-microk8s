@@ -3,6 +3,8 @@ Using Argo CD to deploy WordPress is an excellent GitOps approach. Here's how to
 Step 1: Create a Git Repository for Your WordPress Manifest
 First, create a new GitHub repository (or any Git repo) for your WordPress configuration.
 
+--
+
 Step 2: Create WordPress Application Manifest
 Create wordpress-app.yaml in your Git repository:
 
@@ -28,6 +30,9 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true
+    
+--
+    
 Step 3: Create WordPress Kubernetes Manifests
 Create a manifests/ directory in your Git repo with these files:
 
@@ -220,6 +225,9 @@ resources:
 - mysql-secret.yaml
 - mysql.yaml
 - wordpress.yaml
+
+--
+
 Step 4: Deploy Using Argo CD
 bash
 # Apply the Application manifest to Argo CD
